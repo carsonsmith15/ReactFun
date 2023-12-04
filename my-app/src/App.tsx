@@ -1,14 +1,21 @@
 import React from 'react';
-import ButtonComponent from './components/ButtonComponent';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './components/Home';
+import Login from './components/Login';
+import Customer from './components/Customer';
+import Main from './components/Main';
 
-function App() {
+export function App() {
   return (
-    <div>
-      <h1> My First React Application From Scratch</h1>
-      <ButtonComponent/> 
-    </div>
+    <Router>
+      <Routes>
+        <Route path='home' element={<Home />} />
+        <Route path='customer' element={<Customer />} />
+        <Route path='login' element={<Login />} />
+        <Route path='/' element={<Main />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default App;
+export default App
